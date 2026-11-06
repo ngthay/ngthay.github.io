@@ -43,40 +43,18 @@ if (heroArt && matchMedia('(hover: hover) and (prefers-reduced-motion: no-prefer
   });
 }
 
-// Hero project slideshow (pauses on hover or keyboard focus; no auto-play if reduced motion is on)
+// Hero slideshow of all projects: 2 seconds per picture (no auto-play if reduced motion is on)
 const heroSlides = [...document.querySelectorAll('.hero__frame img')];
 const heroTag = document.querySelector('.hero__tag');
-const heroDots = document.querySelector('.hero__dots');
-let heroIndex = 0, heroTimer;
-const showSlide = i => {
-  heroIndex = (i + heroSlides.length) % heroSlides.length;
-  heroSlides.forEach((img, n) => img.classList.toggle('is-active', n === heroIndex));
-  [...heroDots.children].forEach((dot, n) => dot.setAttribute('aria-current', n === heroIndex));
-  heroTag.textContent = heroSlides[heroIndex].dataset.tag;
-};
-const stopSlides = () => clearInterval(heroTimer);
-const playSlides = () => {
-  stopSlides();
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    heroTimer = setInterval(() => showSlide(heroIndex + 1), 5000);
-  }
-};
-heroSlides.forEach((img, n) => {
-  const dot = document.createElement('button');
-  dot.type = 'button';
-  dot.setAttribute('aria-label', 'Show ' + img.dataset.tag);
-  dot.addEventListener('click', () => showSlide(n));
-  heroDots.append(dot);
-});
-heroDots.hidden = false;
-showSlide(0);
-playSlides();
-if (matchMedia('(hover: hover)').matches) {
-  heroArt.addEventListener('mouseenter', stopSlides);
-  heroArt.addEventListener('mouseleave', playSlides);
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let heroIndex = 0;
+  setInterval(() => {
+    heroSlides[heroIndex].classList.remove('is-active');
+    heroIndex = (heroIndex + 1) % heroSlides.length;
+    heroSlides[heroIndex].classList.add('is-active');
+    heroTag.textContent = heroSlides[heroIndex].dataset.tag;
+  }, 2000);
 }
-heroArt.addEventListener('focusin', e => { if (e.target.matches(':focus-visible')) stopSlides(); });
-heroArt.addEventListener('focusout', playSlides);
 
 // Project photo slideshows: 2 seconds per picture (no auto-play if reduced motion is on)
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {

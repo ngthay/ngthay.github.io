@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=3" />
   <script>
     // Apply saved theme before paint to avoid a flash
     try { if (localStorage.getItem('theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}
@@ -48,33 +48,110 @@
         </div>
         <div class="hero__art">
           <div class="hero__frame">
-            <img class="is-active" src="assets/hero-render-1600.jpg"
-                 srcset="assets/hero-render-960.jpg 960w, assets/hero-render-1600.jpg 1600w"
-                 sizes="(max-width: 860px) 92vw, 50vw"
-                 width="1600" height="900" fetchpriority="high"
-                 data-tag="Hospital project · 10 storeys"
-                 alt="3D render of a 10-storey hospital building" />
+            <img class="is-active" src="assets/project-angdoung-1-1200.jpg"
+                 srcset="assets/project-angdoung-1-720.jpg 720w, assets/project-angdoung-1-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="789" fetchpriority="high"
+                 data-tag="AngDoung Hospital · 15 storeys"
+                 alt="3D render of AngDoung Hospital, a 15-storey building" />
+            <img src="assets/project-angdoung-4-1200.jpg"
+                 srcset="assets/project-angdoung-4-720.jpg 720w, assets/project-angdoung-4-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="789" loading="lazy" decoding="async"
+                 data-tag="AngDoung Hospital · 15 storeys"
+                 alt="" />
+            <img src="assets/project-soviet-1-1200.jpg"
+                 srcset="assets/project-soviet-1-720.jpg 720w, assets/project-soviet-1-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 data-tag="The Soviet Hospital · 10 storeys"
+                 alt="3D render of The Soviet Hospital, a 10-storey building" />
+            <img src="assets/project-soviet-7-1200.jpg"
+                 srcset="assets/project-soviet-7-720.jpg 720w, assets/project-soviet-7-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 data-tag="The Soviet Hospital · 10 storeys"
+                 alt="" />
+            <img src="assets/project-porchentong-1-1200.jpg"
+                 srcset="assets/project-porchentong-1-720.jpg 720w, assets/project-porchentong-1-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="848" loading="lazy" decoding="async"
+                 data-tag="Porchentong Hospital · 6 storeys"
+                 alt="3D render of Porchentong Hospital, a 6-storey building" />
+            <img src="assets/project-porchentong-6-1200.jpg"
+                 srcset="assets/project-porchentong-6-720.jpg 720w, assets/project-porchentong-6-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="848" loading="lazy" decoding="async"
+                 data-tag="Porchentong Hospital · 6 storeys"
+                 alt="" />
+            <img src="assets/project-kopot-1-1280.jpg"
+                 srcset="assets/project-kopot-1-720.jpg 720w, assets/project-kopot-1-1280.jpg 1280w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 data-tag="Kopot Resort"
+                 alt="3D render of the Kopot Resort project" />
+            <img src="assets/project-kopot-3-1280.jpg"
+                 srcset="assets/project-kopot-3-720.jpg 720w, assets/project-kopot-3-1280.jpg 1280w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 data-tag="Kopot Resort"
+                 alt="" />
+            <img src="assets/project-ruseykoe-1-1200.jpg"
+                 srcset="assets/project-ruseykoe-1-720.jpg 720w, assets/project-ruseykoe-1-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 data-tag="Shop House · Rusey Koe"
+                 alt="3D render of the Shop House Rusey Koe project" />
+            <img src="assets/project-ruseykoe-4-1200.jpg"
+                 srcset="assets/project-ruseykoe-4-720.jpg 720w, assets/project-ruseykoe-4-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 data-tag="Shop House · Rusey Koe"
+                 alt="" />
+            <img src="assets/project-chibal-1-1200.jpg"
+                 srcset="assets/project-chibal-1-720.jpg 720w, assets/project-chibal-1-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 data-tag="Chibal Hospital"
+                 alt="3D render of Chibal Hospital, a raised building on brick columns" />
+            <img src="assets/project-chibal-2-1200.jpg"
+                 srcset="assets/project-chibal-2-720.jpg 720w, assets/project-chibal-2-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 data-tag="Chibal Hospital"
+                 alt="" />
+            <img src="assets/project-battambang-1-1200.jpg"
+                 srcset="assets/project-battambang-1-720.jpg 720w, assets/project-battambang-1-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 data-tag="Union of Youth Federations of Cambodia · Battambang"
+                 alt="3D render of the Union of Youth Federations of Cambodia building in Battambang" />
+            <img src="assets/project-battambang-5-1200.jpg"
+                 srcset="assets/project-battambang-5-720.jpg 720w, assets/project-battambang-5-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 data-tag="Union of Youth Federations of Cambodia · Battambang"
+                 alt="" />
             <img src="assets/project-platinum-1200.jpg"
                  srcset="assets/project-platinum-720.jpg 720w, assets/project-platinum-1200.jpg 1200w"
-                 sizes="(max-width: 860px) 92vw, 50vw"
+                 sizes="(max-width: 860px) 92vw, 55vw"
                  width="1200" height="675" loading="lazy" decoding="async"
                  data-tag="Platinum Square · 10 storeys"
                  alt="Aerial photo of The Platinum Square, a 10-storey building" />
             <img src="assets/project-financial-1200.jpg"
                  srcset="assets/project-financial-720.jpg 720w, assets/project-financial-1200.jpg 1200w"
-                 sizes="(max-width: 860px) 92vw, 50vw"
+                 sizes="(max-width: 860px) 92vw, 55vw"
                  width="1200" height="675" loading="lazy" decoding="async"
                  data-tag="Financial Building · 3 basements + 10 storeys"
                  alt="Aerial photo of The Financial Building by Olympia Construction" />
             <img src="assets/project-ktech-1200.jpg"
                  srcset="assets/project-ktech-720.jpg 720w, assets/project-ktech-1200.jpg 1200w"
-                 sizes="(max-width: 860px) 92vw, 50vw"
+                 sizes="(max-width: 860px) 92vw, 55vw"
                  width="1200" height="675" loading="lazy" decoding="async"
                  data-tag="Medium-rise projects · up to 5 storeys"
                  alt="3D render of a 5-storey corner building by Thya K-tech" />
           </div>
-          <span class="hero__tag">Hospital project · 10 storeys</span>
-          <div class="hero__dots" hidden></div>
+          <span class="hero__tag">AngDoung Hospital · 15 storeys</span>
         </div>
       </div>
     </section>
@@ -595,6 +672,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

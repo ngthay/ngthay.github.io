@@ -84,32 +84,21 @@ img{max-width:100%;display:block}
 .hero__cta{display:flex;gap:14px;flex-wrap:wrap}
 .hero__art{position:relative;max-width:880px;width:100%;justify-self:center;--tx:0px;--ty:0px;
   transform:translate(var(--tx),var(--ty));transition:transform .4s ease-out}
-/* Orange corner brackets, matching the About photo */
-.hero__art::before,.hero__art::after{content:"";position:absolute;width:28%;height:32%;z-index:2;pointer-events:none;animation:fadeIn 1s .9s both}
-.hero__art::before{top:-12px;left:-12px;border-top:2px solid var(--accent);border-left:2px solid var(--accent)}
-.hero__art::after{bottom:-12px;right:-12px;border-bottom:2px solid var(--accent);border-right:2px solid var(--accent)}
 .hero__frame{position:relative;aspect-ratio:16/10;border-radius:10px;overflow:hidden;background:var(--bg-2);
-  box-shadow:0 0 0 1px var(--line);
   animation:heroIn 1.2s cubic-bezier(.2,.7,.2,1) .2s both}
 /* Project slideshow: images stacked, the active one fades in */
-.hero__frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease;
+.hero__frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease;
   animation:kenburns 20s ease-in-out infinite alternate}
 .hero__frame img.is-active{opacity:1}
 /* Soft fade into the page at the bottom, warm glow at the top */
 .hero__frame::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(to top,var(--bg) 0%,transparent 38%),
              radial-gradient(ellipse at 85% 0%,#ff7a2f30,transparent 55%)}
-.hero__tag{position:absolute;left:18px;bottom:16px;z-index:3;max-width:calc(100% - 140px);padding:6px 12px;border-radius:30px;
+.hero__tag{position:absolute;left:18px;bottom:16px;z-index:3;max-width:calc(100% - 36px);padding:6px 12px;border-radius:30px;
   background:var(--nav-bg);backdrop-filter:blur(6px);border:1px solid var(--line);
   font-family:"Montserrat";font-size:.72rem;font-weight:600;color:var(--strong);
   animation:fadeIn .8s 1.2s both}
 .hero__tag::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:1px}
-.hero__dots{position:absolute;right:14px;bottom:14px;z-index:3;display:flex;padding:0 4px;border-radius:30px;
-  background:var(--nav-bg);backdrop-filter:blur(6px);border:1px solid var(--line);animation:fadeIn .8s 1.2s both}
-.hero__dots[hidden]{display:none}
-.hero__dots button{width:24px;height:26px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center}
-.hero__dots button::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--muted);transition:.2s}
-.hero__dots button[aria-current="true"]::before{background:var(--accent);transform:scale(1.25)}
 /* Hero text slides in line by line */
 .hero__text > *{animation:heroIn .9s cubic-bezier(.2,.7,.2,1) both}
 .hero__text > :nth-child(2){animation-delay:.1s}
@@ -119,7 +108,7 @@ img{max-width:100%;display:block}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.14) translate(-2%,-1.5%)}}
 @media(prefers-reduced-motion:reduce){
-  .hero__frame,.hero__frame img,.hero__text > *,.hero__art::before,.hero__art::after,.hero__tag,.hero__dots{animation:none}
+  .hero__frame,.hero__frame img,.hero__text > *,.hero__tag{animation:none}
   .hero__frame img{transition:none}
 }
 
