@@ -172,6 +172,14 @@ img{max-width:100%;display:block}
   opacity:0;transform:scale(1.15);transition:opacity 1.2s ease,transform 1.8s cubic-bezier(.2,.7,.2,1)}
 .project.in .project__photo img{opacity:1;transform:scale(1)}
 .project.in:hover .project__photo img{transform:scale(1.04);transition:transform 6s ease-out}
+/* Project with several photos: stacked, the active one fades in. Keeps the renders' 3800:2500 shape */
+.project__photo--slides{aspect-ratio:38/25}
+.project__photo--slides img{position:absolute;inset:0}
+.project__photo--slides img:not(.is-active){opacity:0!important}
+@media(prefers-reduced-motion:no-preference){
+  .project.in .project__photo--slides img{transition:opacity .6s ease,transform 1.8s cubic-bezier(.2,.7,.2,1)}
+  .project.in:hover .project__photo--slides img{transition:opacity .6s ease,transform 6s ease-out}
+}
 /* Light shade at the bottom only, so the label stays readable */
 .project__photo::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;pointer-events:none;
   background:linear-gradient(to top,#0009,transparent)}

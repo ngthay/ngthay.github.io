@@ -78,6 +78,19 @@ if (matchMedia('(hover: hover)').matches) {
 heroArt.addEventListener('focusin', e => { if (e.target.matches(':focus-visible')) stopSlides(); });
 heroArt.addEventListener('focusout', playSlides);
 
+// Project photo slideshows: 2 seconds per picture (no auto-play if reduced motion is on)
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.project__photo--slides').forEach(box => {
+    const pics = [...box.querySelectorAll('img')];
+    let pic = 0;
+    setInterval(() => {
+      pics[pic].classList.remove('is-active');
+      pic = (pic + 1) % pics.length;
+      pics[pic].classList.add('is-active');
+    }, 2000);
+  });
+}
+
 // Footer year
 document.getElementById('year').textContent = '© ' + new Date().getFullYear() + ' All rights reserved';
 
