@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eang Eng Thay | Structural Design Engineer</title>
+  <meta name="description" content="Portfolio of Eang Eng Thay, civil and structural design engineer based in Phnom Penh, Cambodia. Structural design, shop drawings, site inspection." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Apply saved theme before paint to avoid a flash
+    try { if (localStorage.getItem('theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="logo" onclick="event.preventDefault();history.scrollRestoration='manual';location.href=location.pathname">EANG ENG THAY</a>
+      <nav class="nav__links">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="theme-toggle" aria-label="Switch to day mode" title="Day / night mode">☀</button>
+        <button class="nav__toggle" aria-label="Menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">Structural Design Engineer</p>
+          <h1>Structural Design &amp; Drawings for residential and commercial buildings</h1>
+          <p class="lead">Dedicated civil engineer with practical and technical skills, from structural analysis and design to shop drawings and site inspection, on projects up to 54 storeys.</p>
+          <div class="hero__cta">
+            <a href="#contact" class="btn btn--primary">Get in touch</a>
+            <a href="assets/Eang-Eng-Thay-CV.pdf" class="btn btn--outline" download>Download CV</a>
+          </div>
+        </div>
+        <div class="hero__art">
+          <div class="hero__frame">
+            <img class="is-active" src="assets/hero-render-1600.jpg"
+                 srcset="assets/hero-render-960.jpg 960w, assets/hero-render-1600.jpg 1600w"
+                 sizes="(max-width: 860px) 92vw, 50vw"
+                 width="1600" height="900" fetchpriority="high"
+                 data-tag="Hospital project · 10 storeys"
+                 alt="3D render of a 10-storey hospital building" />
+            <img src="assets/project-platinum-1200.jpg"
+                 srcset="assets/project-platinum-720.jpg 720w, assets/project-platinum-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 50vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 data-tag="Platinum Square · 10 storeys"
+                 alt="Aerial photo of The Platinum Square, a 10-storey building" />
+            <img src="assets/project-financial-1200.jpg"
+                 srcset="assets/project-financial-720.jpg 720w, assets/project-financial-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 50vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 data-tag="Financial Building · 3 basements + 10 storeys"
+                 alt="Aerial photo of The Financial Building by Olympia Construction" />
+            <img src="assets/project-ktech-1200.jpg"
+                 srcset="assets/project-ktech-720.jpg 720w, assets/project-ktech-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 50vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 data-tag="Medium-rise projects · up to 5 storeys"
+                 alt="3D render of a 5-storey corner building by Thya K-tech" />
+          </div>
+          <span class="hero__tag">Hospital project · 10 storeys</span>
+          <div class="hero__dots" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPANIES -->
+    <section class="strip">
+      <div class="container">
+        <div class="strip__label"><span>Worked with</span></div>
+        <ul class="strip__list">
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=100063831159616" target="_blank" rel="noopener" class="strip__logo strip__logo--color" title="Thya K-tech on Facebook">
+              <img src="assets/thya-ktech-logo.png" alt="" />
+              <span>Thya K-tech</span>
+            </a>
+          </li>
+          <li>
+            <span class="strip__logo strip__logo--color">
+              <img src="assets/olympia-logo.png" alt="" />
+              <span>Olympia Construction</span>
+            </span>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=100048929784966" target="_blank" rel="noopener" class="strip__logo strip__logo--color" title="Rabiica Construction &amp; Design on Facebook">
+              <img src="assets/rabiica-logo.png" alt="" />
+              <span>Rabiica Construction &amp; Design</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/ocicgroup" target="_blank" rel="noopener" class="strip__logo strip__logo--color" title="OCIC on Facebook">
+              <img src="assets/ocic-logo.png" alt="" />
+              <span>OCIC</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/panhchakselaconstruction" target="_blank" rel="noopener" class="strip__logo strip__logo--color" title="Panhchaksela Construction on Facebook">
+              <img src="assets/panhchaksela-logo.png" alt="" />
+              <span>Panhchaksela Construction</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section__title">Engineering Services</h2>
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="icon">🏗️</div>
+            <h3>Structural Design &amp; Analysis</h3>
+            <p>Preliminary and detailed design using Robot Structural Analysis, CSI ETABS, SAP2000, SAFE and Midas Gen, from planning to construction.</p>
+          </article>
+          <article class="card">
+            <div class="icon">📐</div>
+            <h3>Shop &amp; As-built Drawings</h3>
+            <p>Structural shop drawings, typical drawings and as-built sets in AutoCAD, Revit and Advanced Concrete.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🧱</div>
+            <h3>Reinforced Concrete, Prestressed Concrete &amp; Steel</h3>
+            <p>Reinforced concrete, prestressed concrete and steel detailing, with rebar bill of quantities for construction sites.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🔍</div>
+            <h3>Site Inspection</h3>
+            <p>Field inspection of structures and materials to check conformance with plans, specifications and regulations.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🧊</div>
+            <h3>3D Modelling</h3>
+            <p>Converting AutoCAD drawings to 3D models in SketchUp and Revit for clear visualisation.</p>
+          </article>
+          <article class="card">
+            <div class="icon">📋</div>
+            <h3>Site Engineering &amp; Management</h3>
+            <p>Daily site coordination, schedule monitoring, safety control and reporting to site managers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section__title">Projects &amp; Experience</h2>
+
+        <article class="project">
+          <div class="project__img project__photo">
+            <img src="assets/project-hospital-1200.jpg"
+                 srcset="assets/project-hospital-720.jpg 720w, assets/project-hospital-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 alt="3D render of The Soviet Hospital, a 10-storey building" />
+            <span class="project__tag">Hospital · 10 storeys</span>
+          </div>
+          <div class="project__info">
+            <p><strong>Role:</strong> Structural Design Engineer</p>
+            <p class="muted">Project review and planning, preliminary design and analysis, detailed design, site visits, shop and as-built drawings.</p>
+            <hr />
+            <p class="muted">Project: <strong>The Soviet Hospital</strong></p>
+            <p class="muted">Company: <strong>Rabiica Construction and Design</strong></p>
+            <p class="muted">Period: <strong>Mar 2023 – Present</strong></p>
+          </div>
+        </article>
+
+        <article class="project project--rev">
+          <div class="project__img project__photo">
+            <img src="assets/project-platinum-1200.jpg"
+                 srcset="assets/project-platinum-720.jpg 720w, assets/project-platinum-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 alt="Aerial photo of The Platinum Square, a 10-storey building" />
+            <span class="project__tag">Platinum Square · 10 storeys</span>
+          </div>
+          <div class="project__info">
+            <p><strong>Role:</strong> Structural Draftsman</p>
+            <p class="muted">Structural shop drawings and as-built drawings, plan control, and submission of shop drawings to the technical department and site.</p>
+            <hr />
+            <p class="muted">Project: <strong>The Platinum Square</strong></p>
+            <p class="muted">Company: <strong>Olympia Construction (OPC)</strong></p>
+            <p class="muted">Period: <strong>Sep 2022 – Feb 2023</strong></p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__img project__photo">
+            <img src="assets/project-financial-1200.jpg"
+                 srcset="assets/project-financial-720.jpg 720w, assets/project-financial-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 alt="Aerial photo of The Financial Building by Olympia Construction" />
+            <span class="project__tag">Financial Building · 3 basements + 10 storeys</span>
+          </div>
+          <div class="project__info">
+            <p><strong>Role:</strong> Site Inspector</p>
+            <p class="muted">Evaluated plans and specifications, performed field inspections and material tests, issued violation notices, and maintained records.</p>
+            <hr />
+            <p class="muted">Project: <strong>The Financial Building</strong></p>
+            <p class="muted">Company: <strong>Olympia Construction (OPC)</strong></p>
+            <p class="muted">Period: <strong>Mar 2022 – Sep 2022</strong></p>
+          </div>
+        </article>
+
+        <article class="project project--rev">
+          <div class="project__img project__photo">
+            <img src="assets/project-ktech-1200.jpg"
+                 srcset="assets/project-ktech-720.jpg 720w, assets/project-ktech-1200.jpg 1200w"
+                 sizes="(max-width: 860px) 92vw, 55vw"
+                 width="1200" height="675" loading="lazy" decoding="async"
+                 alt="3D render of a 5-storey corner building by Thya K-tech" />
+            <span class="project__tag">Medium-rise projects · up to 5 storeys</span>
+          </div>
+          <div class="project__info">
+            <p><strong>Role:</strong> Draftsman</p>
+            <p class="muted">Structural drawings for educational buildings up to 5 storeys, rebar bill of quantities, and AutoCAD to SketchUp 3D conversion.</p>
+            <hr />
+            <p class="muted">Company: <strong>Thya K-tech Co., Ltd</strong></p>
+            <p class="muted">Period: <strong>Dec 2020 – Oct 2021</strong></p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__img ph">Olympia Tower · 54 storeys</div>
+          <div class="project__info">
+            <p><strong>Role:</strong> Site Engineer (Internship)</p>
+            <p class="muted">Plan review, daily site coordination, schedule monitoring, safety control and reporting to the Site Manager.</p>
+            <hr />
+            <p class="muted">Project: <strong>Olympia Tower</strong></p>
+            <p class="muted">Company: <strong>OCIC</strong></p>
+            <p class="muted">Period: <strong>Aug – Oct 2019</strong></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="container stats__inner">
+        <div><strong data-count="6">0</strong><span>projects delivered</span></div>
+        <div><strong data-count="5">0</strong><span>companies</span></div>
+        <div><strong data-count="54">0</strong><span>storeys, tallest project</span></div>
+        <div><strong data-count="3">0</strong><span>certificates</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container about">
+        <div class="about__photo">
+          <img src="assets/eangengthay-web.jpg" width="800" height="1000" loading="lazy" decoding="async" alt="Portrait of Eang Eng Thay" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="about__fallback">ETH</div>
+        </div>
+        <div class="about__text">
+          <h2>About me</h2>
+          <p>I'm Eang Eng Thay, a civil engineer based in Phnom Penh, Cambodia, currently working as a Structural Design Engineer at Rabiica Construction and Design.</p>
+          <p>I have worked as a site engineer, draftsman, site inspector and design engineer on buildings ranging from schools to a 54-storey tower, which gives me a practical view of how a design is drawn, checked and built.</p>
+          <p>I graduated in Civil Engineering from the National Technical Training Institute (NTTI) in 2022 and keep learning new tools and methods to deliver safe, efficient structures.</p>
+          <ul class="facts">
+            <li><span>Languages</span> Khmer (native), English (good)</li>
+            <li><span>Education</span> NTTI, Civil Engineering (2017–2022)</li>
+            <li><span>Location</span> Phnom Penh, Cambodia</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section__title">Technical Skills</h2>
+        <div class="grid grid--3 skills">
+          <div class="card">
+            <h3>Analysis &amp; Design</h3>
+            <div class="bar"><label>Robot Structural Analysis</label><i data-level="78"></i></div>
+            <div class="bar"><label>CSI ETABS</label><i data-level="78"></i></div>
+          </div>
+          <div class="card">
+            <h3>Drawing &amp; Modelling</h3>
+            <div class="bar"><label>AutoCAD 2D &amp; 3D</label><i data-level="83"></i></div>
+            <div class="bar"><label>Advanced Concrete</label><i data-level="83"></i></div>
+            <div class="bar"><label>SketchUp</label><i data-level="84"></i></div>
+            <div class="bar"><label>Revit</label><i data-level="54"></i></div>
+          </div>
+          <div class="card">
+            <h3>Office</h3>
+            <div class="bar"><label>Microsoft Word</label><i data-level="80"></i></div>
+            <div class="bar"><label>Microsoft Excel</label><i data-level="65"></i></div>
+            <div class="bar"><label>Microsoft PowerPoint</label><i data-level="88"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Education &amp; Certificates</h2>
+        <div class="grid grid--2">
+          <article class="card card--logo">
+            <a href="https://www.kongju.ac.kr/eng/index.do" target="_blank" rel="noopener" title="Kongju National University website">
+              <img src="assets/knu-logo.png" width="64" height="64" loading="lazy" decoding="async" alt="Kongju National University website" />
+            </a>
+            <div>
+              <h3>Civil and Environmental Engineering</h3>
+              <p>Kongju National University<br /><span class="accent">Master's Degree, in progress</span></p>
+            </div>
+          </article>
+          <article class="card card--logo">
+            <a href="https://ntti.edu.kh" target="_blank" rel="noopener" title="National Technical Training Institute website">
+              <img src="assets/ntti-logo.png" width="100" height="100" loading="lazy" decoding="async" alt="National Technical Training Institute website" />
+            </a>
+            <div>
+              <h3>Civil Engineer</h3>
+              <p>National Technical Training Institute (NTTI)<br /><span class="accent">Completed July 2, 2022</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERENCES -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">References</h2>
+        <div class="grid grid--2 refs">
+          <article class="card">
+            <p class="quote">Teacher of Structure and Reinforced Concrete</p>
+            <div class="person"><div class="avatar">SS</div><div><strong>Seng Sakborin</strong><small>National Technical Training Institute</small></div></div>
+          </article>
+          <article class="card">
+            <p class="quote">Teacher of Structure and Reinforced Concrete</p>
+            <div class="person"><div class="avatar">KS</div><div><strong>Khay Sochot</strong><small>National Technical Training Institute</small></div></div>
+          </article>
+        </div>
+        <p class="muted center">Contact details available on request.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section__title">Have a project in mind?</h2>
+        <div class="contact">
+          <div class="contact__info">
+            <p>Get in touch to talk about structural design, drawings or inspection for your project.</p>
+            <p><a href="mailto:ngengthay@gmail.com">✉ ngengthay@gmail.com</a></p>
+            <p><a href="tel:+85581836207">☎ 081 836 207</a></p>
+            <p><a href="https://www.facebook.com/" target="_blank" rel="noopener">ⓕ Facebook: Eang Engthay</a></p>
+          </div>
+          <form id="contact-form" class="form">
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="E-mail" required />
+            <input type="tel" name="phone" placeholder="Phone" />
+            <textarea name="message" rows="5" placeholder="Message" required></textarea>
+            <button type="submit" class="btn btn--primary">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>Eang Eng Thay · Phnom Penh, Cambodia</span>
+      <span id="year"></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

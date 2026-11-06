@@ -1,0 +1,296 @@
+:root{
+  --bg:#101014;
+  --bg-2:#17171d;
+  --bg-3:#1e1e26;
+  --text:#f2f2f4;
+  --muted:#a5a5b0;
+  --accent:#ff7a2f;
+  --accent-2:#ff9455;
+  --radius:6px;
+  --line:#ffffff14;
+  --nav-bg:rgba(16,16,20,.85);
+  --strong:#fff;
+  --faint:#ffffff70;
+  --ph-a:#23232d;
+  --ph-b:#15151b;
+  --stripe:#ffffff06;
+  --shadow:none;
+  /* Fluid layout */
+  --max:1600px;
+  --gutter:clamp(16px,4vw,72px);
+  --nav-h:68px;
+  --section-y:clamp(48px,7vw,120px);
+  color-scheme:dark;
+}
+/* Day mode */
+:root[data-theme="light"]{
+  --bg:#f5f5f7;
+  --bg-2:#ffffff;
+  --bg-3:#e4e4ea;
+  --text:#18181e;
+  --muted:#5a5a68;
+  --accent:#f26a1b;
+  --accent-2:#ff7a2f;
+  --line:#00000017;
+  --nav-bg:rgba(245,245,247,.88);
+  --strong:#18181e;
+  --faint:#18181e90;
+  --ph-a:#ececf1;
+  --ph-b:#dedee5;
+  --stripe:#00000008;
+  --shadow:0 1px 3px #00000012,0 4px 14px #0000000a;
+  color-scheme:light;
+}
+body,.nav,.card,.project,.stats,.nav__links{transition:background-color .3s,color .3s,border-color .3s}
+*{box-sizing:border-box;margin:0;padding:0}
+/* Base size grows with the screen: 15px on phones, 16px on laptops, 18px on large monitors.
+   Everything sized in rem scales with it. */
+html{scroll-behavior:smooth;font-size:clamp(15px,.35vw + 11.5px,18px);-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:"Open Sans",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.btn,.logo{font-family:"Montserrat",sans-serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(var(--max),100% - 2 * var(--gutter));margin-inline:auto}
+.muted{color:var(--muted);font-size:.9rem}
+.center{text-align:center;margin-top:24px}
+.accent{color:var(--accent)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;gap:20px;height:var(--nav-h)}
+.logo{font-weight:700;font-size:clamp(1.2rem,1.4vw + .6rem,1.75rem);letter-spacing:.5px;color:var(--accent);white-space:nowrap}
+.nav__links{display:flex;gap:clamp(18px,2.2vw,40px);margin-left:auto;font-size:.85rem;color:var(--muted)}
+.nav__links a{transition:color .2s}
+.nav__links a:hover{color:var(--accent)}
+.nav__actions{display:flex;align-items:center;gap:6px}
+.theme-toggle{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--bg-2);color:var(--accent);font-size:1.05rem;line-height:1;cursor:pointer;display:grid;place-items:center;transition:.2s}
+.theme-toggle:hover{border-color:var(--accent)}
+.nav__toggle{display:none;background:none;border:0;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+/* BUTTONS */
+.btn{display:inline-block;padding:11px 22px;font-size:.8rem;font-weight:600;border-radius:3px;border:1px solid transparent;cursor:pointer;transition:.2s}
+.btn--primary{background:var(--accent);color:#fff}
+.btn--primary:hover{background:var(--accent-2);transform:translateY(-2px)}
+.btn--outline{border-color:var(--faint);color:var(--strong)}
+.btn--outline:hover{border-color:var(--accent);color:var(--accent)}
+
+/* HERO */
+/* Hero fills the first screen on every device */
+.hero{min-height:calc(100vh - var(--nav-h));min-height:calc(100svh - var(--nav-h));display:flex;align-items:center;padding:clamp(40px,6vw,90px) 0}
+.hero__inner{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,5vw,90px);align-items:center}
+.eyebrow{color:var(--accent);font-family:"Montserrat";font-weight:600;font-size:clamp(.9rem,.4vw + .75rem,1.1rem);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+.hero h1{font-size:clamp(1.75rem,3.4vw + .5rem,3.8rem);line-height:1.2;margin-bottom:18px}
+.lead{color:var(--muted);max-width:36em;margin-bottom:30px;font-size:clamp(.95rem,.4vw + .8rem,1.15rem)}
+.hero__cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero__art{position:relative;max-width:760px;width:100%;justify-self:center;--tx:0px;--ty:0px;
+  transform:translate(var(--tx),var(--ty));transition:transform .4s ease-out}
+/* Orange corner brackets, matching the About photo */
+.hero__art::before,.hero__art::after{content:"";position:absolute;width:28%;height:32%;z-index:2;pointer-events:none;animation:fadeIn 1s .9s both}
+.hero__art::before{top:-12px;left:-12px;border-top:2px solid var(--accent);border-left:2px solid var(--accent)}
+.hero__art::after{bottom:-12px;right:-12px;border-bottom:2px solid var(--accent);border-right:2px solid var(--accent)}
+.hero__frame{position:relative;aspect-ratio:16/10;border-radius:10px;overflow:hidden;background:var(--bg-2);
+  box-shadow:0 0 0 1px var(--line);
+  animation:heroIn 1.2s cubic-bezier(.2,.7,.2,1) .2s both}
+/* Project slideshow: images stacked, the active one fades in */
+.hero__frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease;
+  animation:kenburns 20s ease-in-out infinite alternate}
+.hero__frame img.is-active{opacity:1}
+/* Soft fade into the page at the bottom, warm glow at the top */
+.hero__frame::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,var(--bg) 0%,transparent 38%),
+             radial-gradient(ellipse at 85% 0%,#ff7a2f30,transparent 55%)}
+.hero__tag{position:absolute;left:18px;bottom:16px;z-index:3;max-width:calc(100% - 140px);padding:6px 12px;border-radius:30px;
+  background:var(--nav-bg);backdrop-filter:blur(6px);border:1px solid var(--line);
+  font-family:"Montserrat";font-size:.72rem;font-weight:600;color:var(--strong);
+  animation:fadeIn .8s 1.2s both}
+.hero__tag::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:1px}
+.hero__dots{position:absolute;right:14px;bottom:14px;z-index:3;display:flex;padding:0 4px;border-radius:30px;
+  background:var(--nav-bg);backdrop-filter:blur(6px);border:1px solid var(--line);animation:fadeIn .8s 1.2s both}
+.hero__dots[hidden]{display:none}
+.hero__dots button{width:24px;height:26px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+.hero__dots button::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--muted);transition:.2s}
+.hero__dots button[aria-current="true"]::before{background:var(--accent);transform:scale(1.25)}
+/* Hero text slides in line by line */
+.hero__text > *{animation:heroIn .9s cubic-bezier(.2,.7,.2,1) both}
+.hero__text > :nth-child(2){animation-delay:.1s}
+.hero__text > :nth-child(3){animation-delay:.2s}
+.hero__text > :nth-child(4){animation-delay:.3s}
+@keyframes heroIn{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.14) translate(-2%,-1.5%)}}
+@media(prefers-reduced-motion:reduce){
+  .hero__frame,.hero__frame img,.hero__text > *,.hero__art::before,.hero__art::after,.hero__tag,.hero__dots{animation:none}
+  .hero__frame img{transition:none}
+}
+
+/* STRIP */
+.strip{padding:clamp(20px,3vw,40px) 0 clamp(36px,5vw,70px)}
+.strip__label{display:flex;align-items:center;gap:16px;color:var(--muted);font-size:.8rem;margin-bottom:26px}
+.strip__label::after{content:"";flex:1;height:1px;background:var(--line)}
+.strip__list{list-style:none;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;color:var(--faint);font-family:"Montserrat";font-weight:600;font-size:.95rem}
+/* All logos share one height and align to the top, so every name sits on the same line */
+.strip__list{align-items:flex-start}
+.strip__logo{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;transition:transform .2s,opacity .2s;opacity:.85}
+.strip__logo:hover span{color:var(--accent)}
+.strip__logo:hover{opacity:1;transform:scale(1.05)}
+/* Night mode: invert the black-on-white logo and drop its background */
+.strip__logo img{height:clamp(52px,4.5vw,84px);width:auto;filter:invert(1);mix-blend-mode:screen}
+/* Day mode: original colours, white background blends away */
+:root[data-theme="light"] .strip__logo img{filter:none;mix-blend-mode:multiply}
+/* Colour logos keep their colours: white tile at night, blended by day */
+.strip__logo--color img{filter:none;mix-blend-mode:normal;background:#fff;border-radius:6px;padding:3px}
+:root[data-theme="light"] .strip__logo--color img{background:none;padding:0}
+/* SECTIONS */
+.section{padding:var(--section-y) 0}
+.section__title{text-align:center;font-size:clamp(1.35rem,1.6vw + .8rem,2.3rem);margin-bottom:clamp(28px,4vw,56px)}
+.grid{display:grid;gap:clamp(14px,1.6vw,26px)}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+.grid--2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--bg-2);padding:clamp(20px,2vw,34px);border-radius:var(--radius);border:1px solid transparent;box-shadow:var(--shadow);transition:.25s}
+.card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.card h3{font-size:1rem;margin-bottom:10px}
+.card p{color:var(--muted);font-size:.88rem}
+/* Card with a logo in front of the text */
+.card--logo{display:flex;gap:16px;align-items:center}
+.card--logo a{flex:none;display:block;transition:transform .2s}
+.card--logo a:hover{transform:scale(1.05)}
+.card--logo img{display:block;width:64px;height:64px;object-fit:contain}
+.icon{font-size:1.7rem;margin-bottom:14px}
+
+/* PROJECTS */
+.project{display:grid;grid-template-columns:1.2fr 1fr;background:var(--bg-2);margin-bottom:18px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.project--rev{grid-template-columns:1fr 1.2fr}
+.project--rev .project__img{order:2}
+.project__img{min-height:clamp(180px,20vw,340px);background-size:cover;background-position:center}
+.ph{display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:var(--faint);font-family:"Montserrat";font-weight:600;
+  background:linear-gradient(135deg,var(--ph-a),var(--ph-b)),repeating-linear-gradient(45deg,transparent 0 12px,var(--stripe) 12px 13px);
+  background-blend-mode:overlay}
+/* Project photo: zooms out and fades in on scroll, slow zoom on hover */
+/* Whole image is always shown at its true 16:9 shape (no cropping) */
+.project__photo{position:relative;overflow:hidden;background:var(--bg-3);min-height:0;align-self:center;aspect-ratio:16/9}
+.project__photo img{width:100%;height:100%;object-fit:cover;
+  opacity:0;transform:scale(1.15);transition:opacity 1.2s ease,transform 1.8s cubic-bezier(.2,.7,.2,1)}
+.project.in .project__photo img{opacity:1;transform:scale(1)}
+.project.in:hover .project__photo img{transform:scale(1.04);transition:transform 6s ease-out}
+/* Light shade at the bottom only, so the label stays readable */
+.project__photo::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;pointer-events:none;
+  background:linear-gradient(to top,#0009,transparent)}
+.project__tag{position:absolute;left:18px;bottom:16px;z-index:1;color:#fff;font-family:"Montserrat";font-weight:600;font-size:.85rem;
+  text-shadow:0 1px 8px #000a;opacity:0;transform:translateY(10px);transition:opacity .8s .6s,transform .8s .6s}
+.project__tag::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:1px}
+.project.in .project__tag{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .project__photo img,.project__tag{opacity:1;transform:none;transition:none}
+}
+.project__info{padding:clamp(20px,2.4vw,40px);font-size:.88rem;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.project__info hr{border:0;height:1px;background:var(--accent);width:24px;margin:10px 0}
+
+/* STATS */
+.stats{background:var(--bg-2);padding:clamp(32px,4vw,64px) 0;margin:30px 0}
+.stats__inner{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:20px}
+.stats strong{display:block;font-family:"Montserrat";font-size:clamp(1.8rem,2.2vw + .8rem,3rem)}
+.stats strong::before{content:"+";color:var(--accent)}
+.stats span{color:var(--muted);font-size:.85rem}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(44px,6vw,100px);align-items:center}
+.about__photo{position:relative;aspect-ratio:4/5;background:var(--bg-2);max-width:clamp(260px,28vw,460px);justify-self:center;width:100%}
+.about__photo::before{content:"";position:absolute;top:-14px;left:-14px;width:50%;height:50%;border-top:2px solid var(--accent);border-left:2px solid var(--accent)}
+.about__photo::after{content:"";position:absolute;bottom:-14px;right:-14px;width:50%;height:50%;border-bottom:2px solid var(--accent);border-right:2px solid var(--accent)}
+.about__photo img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+.about__fallback{display:none;position:relative;z-index:1;width:100%;height:100%;align-items:center;justify-content:center;font-family:"Montserrat";font-size:4rem;font-weight:700;color:var(--accent)}
+.about__text h2{font-size:clamp(1.35rem,1.6vw + .8rem,2.3rem);margin-bottom:18px}
+.about__text{max-width:44em}
+.about__text p{color:var(--muted);font-size:.92rem;margin-bottom:14px}
+.facts{list-style:none;margin-top:20px;font-size:.88rem;color:var(--muted)}
+.facts li{padding:8px 0;border-top:1px solid var(--line)}
+.facts span{display:inline-block;width:100px;color:var(--accent);font-family:"Montserrat";font-weight:600;font-size:.78rem}
+
+/* SKILLS */
+.bar{margin-top:16px}
+.bar label{display:block;font-size:.82rem;color:var(--muted);margin-bottom:6px}
+.bar i{display:block;height:6px;background:var(--bg-3);border-radius:3px;position:relative;overflow:hidden}
+.bar i::after{content:"";position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:3px;transition:width 1.2s ease}
+.bar i.on::after{width:var(--w)}
+
+/* REFERENCES */
+.person{display:flex;align-items:center;gap:14px;margin-top:20px}
+.person small{display:block;color:var(--muted);font-size:.75rem}
+.avatar{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:"Montserrat";font-weight:700;font-size:.85rem}
+.quote{font-style:italic}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(32px,5vw,90px);max-width:1200px;margin-inline:auto}
+.contact__info p{color:var(--muted);font-size:.92rem;margin-bottom:16px}
+.contact__info a:hover{color:var(--accent)}
+.form{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.form input,.form textarea{width:100%;background:var(--bg-2);border:1px solid var(--line);color:var(--text);padding:13px 14px;border-radius:3px;font:inherit;font-size:.88rem;resize:vertical}
+.form input:focus,.form textarea:focus{outline:0;border-color:var(--accent)}
+
+/* FOOTER */
+.footer{margin-top:60px;border-top:1px solid var(--line);padding:24px 0;font-size:.78rem;color:var(--muted)}
+.footer__inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:.7s}
+.reveal.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
+html,body{overflow-x:hidden}
+section[id]{scroll-margin-top:var(--nav-h)}
+
+/* Small laptops / tablet landscape */
+@media(max-width:1100px){
+  .nav__links{font-size:.8rem}
+}
+
+/* Phones turned sideways: don't force the hero to screen height */
+@media(max-height:520px) and (orientation:landscape){
+  .hero{min-height:auto}
+}
+
+/* Touch devices: no hover lift, which sticks after a tap */
+@media(hover:none){
+  .card:hover,.btn--primary:hover{transform:none}
+  .card:hover{border-color:transparent}
+}
+
+/* Tablet & mobile */
+@media(max-width:860px){
+  .nav__toggle{display:block;width:44px;height:44px}
+  .nav__links{position:absolute;top:var(--nav-h);left:0;right:0;margin-left:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);display:none;max-height:calc(100vh - var(--nav-h));overflow-y:auto;font-size:1rem}
+  .nav__links.open{display:flex}
+  .nav__links a{padding:16px var(--gutter);border-top:1px solid var(--line)}
+  .hero__inner,.about,.contact,.project,.project--rev{grid-template-columns:1fr}
+  .hero__text{text-align:center}
+  .lead{margin-inline:auto}
+  .hero__cta{justify-content:center}
+  .hero__art{max-width:640px}
+  .project--rev .project__img{order:0}
+  .project__photo{align-self:stretch}
+  .grid--3{grid-template-columns:repeat(2,1fr)}
+  .stats__inner{grid-template-columns:repeat(2,1fr);row-gap:30px}
+  .about__photo{max-width:320px}
+  .about__text{margin-inline:auto}
+  .strip__list{justify-content:center;gap:12px 28px}
+  /* 16px stops iOS zooming into form fields */
+  .form input,.form textarea{font-size:16px}
+}
+
+/* Phone */
+@media(max-width:600px){
+  :root{--nav-h:60px}
+  .theme-toggle{width:36px;height:36px}
+  .hero__art{max-width:none}
+  .hero__art::before,.hero__art::after{display:none}
+  .hero__tag{left:12px;bottom:10px;font-size:.68rem}
+  .hero__cta .btn{flex:1;text-align:center;padding:14px 18px}
+  .grid--3,.grid--2{grid-template-columns:1fr}
+  .strip__list{font-size:.85rem}
+  .about__text h2{text-align:center}
+  .facts span{display:block;width:auto;margin-bottom:2px}
+  .form{align-items:stretch}
+  .form .btn{padding:14px}
+  .footer{margin-top:30px}
+  .footer__inner{flex-direction:column;align-items:center;text-align:center}
+}
