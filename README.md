@@ -21,6 +21,8 @@ assets/
 3. Go to **Settings → Pages → Build and deployment**, choose **Deploy from a branch**, select `main` and `/ (root)`, then Save.
 4. Your site goes live at `https://<username>.github.io/` (or `/<repo-name>/`) within a minute or two.
 
+Live site: https://ngthay.github.io/
+
 ## Customise
 
 - **Project photos:** in `index.html`, replace `<div class="project__img ph">…</div>` with
